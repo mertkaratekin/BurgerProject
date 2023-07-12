@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box; 
+}
+.header {
+    display: flex;
+    /*parçalara ayır yanyana*/
+    justify-content: space-between;
+    background-color: pink;
+    height: 80px;
+    align-items: center;
+    /*dikey olarak ortalama yapar.*/
+    padding: 0px 15px;
+    /*üstten alttan 0 boşluk sağdan soldan 15px boşluk*/
+}
+
+.bannerDiv {
+    background-image: url('banner.jpg');
+    margin-bottom: 30px;
+    height: 400px;
+    position: relative
+}
+
+.banner {
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+}
+
+.headerlink {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.imgMaindiv {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px ;
+    flex-wrap: wrap;  /*Özellik flex-wrap, esnek öğelerin kaydırılıp kaydırılmayacağını belirtir.*/
+
+}
+.imgResDiv{
+    flex: 25%;
+}
+
+.imgDiv {
+    /* width: 200px; */
+    border: 1px dashed black;  /*kesik çizğili çerçeve*/
+    border-radius: 30px;
+    /* margin-right: 30px; */
+    margin: 20px;
+}
+
+.imgDiv img {
+    width: 100%;
+    /*border-top-left-radius: 30px;
+    border-top-right-radius: 30px;*/
+    border-radius: 30px 30px 0px 0px;
+    /*sol üst 30, sağ üst 30, sağ alt 0 , sol alt 0 */
+}
+
+.imgDiv h3 {
+    text-align: center;
+    color: red;
+}
+
+.imgDiv p {
+    padding: 0px 20px;
+    text-align: center;
+}
+
+.pricePurchaseDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px
+}
+
+.imgDiv .price {
+    font-size: 28px;
+    color: red;
+}
+.imgDiv .purchase {
+    padding: 15px 10px;
+    border-radius: 30px;
+    border: none;
+    background-color: green;
+    color: white;
+    width: 100px;
+}
+.footer {
+    margin-top: 30px;
+    background-color: lightcoral;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;  /*her parçanın sağına soluna x kadar boşluk bırakır*/
+    
+    align-items: center;
+    /*dikey eksende hizalama*/
+}
+.footerList{
+    list-style-type: none;  /*default gelen • sembolünü kaldırmak için*/
+}
+.footerList li{
+    margin-top: 10px;
+}
+.footerElement{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.mobileIcon {
+    display: none;
+}
+@media screen and (max-width: 900px) {  /*tablet görünümü*/
+   /* .imgMaindiv{
+    flex-wrap: wrap;
+   } */
+   .imgResDiv{
+    flex: 50%; /*tablet görünümünde ürünlerin 2 li gelmesi için*/
+   }
+}
+@media screen and (max-width: 600px) {   /*telefon görünümü*/
+    .footer{
+        flex-direction: column;
+        height: auto;
+    }
+    .footerList{
+        display: flex; /*yazıları yanyana getirmek için kullanılır.*/
+        padding: 0px;
+    }
+    .footerList li{
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .imgDiv {
+        /* width: 100%; */
+        margin-bottom: 30px;
+    }
+    .mobileLinkDisplay {
+        display: none;
+    }
+    .mobileLink {
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /*soldan başlaması için*/
+    }
+    .imgMaindiv {
+        flex-direction: column;
+
+    }
+    .imgResDiv{
+        flex: 100%;
+    }
+
+    .headerimg {
+        display: none;
+    }
+
+    .mobileIcon {
+        display: block;
+    }
+}
